@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F64D77D-F1FE-4DB3-8756-D62EC6EFAE80}</ProjectGuid>
+    <ProjectGuid>{51F38352-B5DC-4EB2-A36F-D2C282B74B62}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extension_Exercises</RootNamespace>
-    <AssemblyName>Extension Exercises</AssemblyName>
+    <RootNamespace>IntroApplication</RootNamespace>
+    <AssemblyName>IntroApplication</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +48,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Question1\Question1.csproj">
+      <Project>{47b87837-6b64-4020-8852-87c1873e663e}</Project>
+      <Name>Question1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Question2\Question2.csproj">
+      <Project>{1cb9d191-400b-402a-91e3-3aadff401bbb}</Project>
+      <Name>Question2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Question3\Question3.csproj">
+      <Project>{80f36c4e-c186-4769-9aad-97cc21080261}</Project>
+      <Name>Question3</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

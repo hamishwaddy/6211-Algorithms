@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F64D77D-F1FE-4DB3-8756-D62EC6EFAE80}</ProjectGuid>
+    <ProjectGuid>{12C1A9D4-7ECA-4265-98AB-308AE6093CAD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extension_Exercises</RootNamespace>
-    <AssemblyName>Extension Exercises</AssemblyName>
+    <RootNamespace>ArraysExtended</RootNamespace>
+    <AssemblyName>ArraysExtended</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task1a\Task1a.csproj">
+      <Project>{2897b0f0-7318-437c-b3f9-7967dc572e2d}</Project>
+      <Name>Task1a</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

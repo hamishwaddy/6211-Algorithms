@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F64D77D-F1FE-4DB3-8756-D62EC6EFAE80}</ProjectGuid>
+    <ProjectGuid>{BED8A459-8BD5-4CE6-ACF4-C1071ADA2BA1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extension_Exercises</RootNamespace>
-    <AssemblyName>Extension Exercises</AssemblyName>
+    <RootNamespace>GetAllUiNamesString</RootNamespace>
+    <AssemblyName>GetAllUiNamesString</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

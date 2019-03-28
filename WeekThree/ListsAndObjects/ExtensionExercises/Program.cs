@@ -20,17 +20,44 @@ namespace ExtensionExercises
             List<Person> data = new JavaScriptSerializer().Deserialize<List<Person>>(json);
 
             List<Person> dataCopy = new List<Person>(json.Length);
+            List<Person> femaleData = new List<Person>();
+            List<Person> maleData = new List<Person>();
 
-            data.CopyTo(dataCopy);
+            dataCopy = data;
 
             foreach (Person x in dataCopy)
             {
-                Console.WriteLine("Name: {0} {1}", x.name,x.surname);
+                if(x.gender=="female")
+                {
+                    femaleData.Add(x);
+                }
+                else if (x.gender=="male")
+                {
+                    maleData.Add(x);
+                }
             }
 
+            Console.WriteLine("FEMALE LIST");
+            foreach (Person x in femaleData)
+            {
+                Console.WriteLine("Name: {0}, {1}", x.surname, x.name);
+            }
+            Console.Write("\nNumber of females in list: {0}", femaleData.Count);
 
+            Console.WriteLine("\n\nMALE LIST");
+            foreach (Person x in maleData)
+            {
+                Console.WriteLine("Name: {0}, {1}", x.surname,x.name);
+            }
+            Console.Write("\nNumber of males in list: {0}", maleData.Count);
+
+            Console.WriteLine("\n\nThere are {0} females and {1} males in the list.",femaleData.Count,maleData.Count);
+
+            
             Console.ReadLine();
         }
+
+        
     }
 
     public class Person

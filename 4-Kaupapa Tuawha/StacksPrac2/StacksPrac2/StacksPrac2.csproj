@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F64D77D-F1FE-4DB3-8756-D62EC6EFAE80}</ProjectGuid>
+    <ProjectGuid>{8D1D5149-5B51-4214-928C-47230069B41E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extension_Exercises</RootNamespace>
-    <AssemblyName>Extension Exercises</AssemblyName>
+    <RootNamespace>StacksPrac2</RootNamespace>
+    <AssemblyName>StacksPrac2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +48,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task1\Task1.csproj">
+      <Project>{2ead9a9b-52b8-42df-b5a0-ae6d6225daf9}</Project>
+      <Name>Task1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task2\Task2.csproj">
+      <Project>{80094f1f-2dc9-4c2d-8a59-736f5d070de4}</Project>
+      <Name>Task2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task3\Task3.csproj">
+      <Project>{06dffbe1-aa13-43b1-9d79-4f8c0bf5b170}</Project>
+      <Name>Task3</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

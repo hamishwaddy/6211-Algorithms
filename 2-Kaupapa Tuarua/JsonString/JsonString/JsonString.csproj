@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F64D77D-F1FE-4DB3-8756-D62EC6EFAE80}</ProjectGuid>
+    <ProjectGuid>{B1908F14-8BDD-4868-8305-B464B95D24E0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extension_Exercises</RootNamespace>
-    <AssemblyName>Extension Exercises</AssemblyName>
+    <RootNamespace>JsonString</RootNamespace>
+    <AssemblyName>JsonString</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
