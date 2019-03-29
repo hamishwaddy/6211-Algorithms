@@ -9,6 +9,8 @@ namespace Question1Palindrome
     public class ProgramQ1
     {
         static Stack<char> userWordStack = new Stack<char>();
+        static Stack<char> userWordStackCopy = new Stack<char>();
+
 
 
         public static void Main(string[] args)
@@ -16,21 +18,11 @@ namespace Question1Palindrome
             Console.WriteLine("*** Question1: Palindrome ***\n\n");
             Console.WriteLine("Enter the word that you think is a palindrome.");
             string string1 = Console.ReadLine().ToLower();
-            string temp = "";
-            BuildWordStack(string1);
-            char[] chArr = string1.ToArray();
-            for (int x = 0; x < chArr.Length; x++)
-            {
-                if (chArr[x] != ' ')
-                {
-                    temp += chArr[x];
-                }
 
-            }
-            string1 = temp;
-            string rw = ReverseWord();
-            PalindromeCheck(string1, rw);
-            
+            BuildWordStack(string1);
+            //string rw = ReverseWord();
+            //PalindromeCheck(string1, rw);
+
             Console.ReadLine();
 
         }
@@ -38,18 +30,25 @@ namespace Question1Palindrome
         public static void BuildWordStack(string string1)
         {
             //This method receives the word entered by the user as a parameter and has the job of pushing the characters of that word onto a stack.
-            char[] chArr = string1.ToArray();
+            string1.Split()
 
-            for (int x = 0; x < chArr.Length; x++)
+            for (int i = 0; i < noSpaces.Length; i++)
             {
-                if (chArr[x] != ' ')
-                {
-                    userWordStack.Push(chArr[x]);
-                }
-                
+                Console.WriteLine(i);
             }
 
-            
+            //char[] chArr = string1.ToArray();
+
+            //for (int x = 0; x < chArr.Length; x++)
+            //{
+            //    if (chArr[x] != ' ')
+            //    {
+            //        userWordStack.Push(chArr[x]);
+            //    }
+
+            //}
+
+
         }
 
         public static string ReverseWord()
@@ -57,7 +56,7 @@ namespace Question1Palindrome
             //This method receives no parameters but has the job of returning a string; the word (the characters from the stack) in reverse.
             string reversedWord = "";
             int wordnum = userWordStack.Count;
-            for(int i = 0 ; i < wordnum; i++)
+            for (int i = 0; i < wordnum; i++)
             {
                 reversedWord += userWordStack.Pop();
             }
@@ -68,7 +67,7 @@ namespace Question1Palindrome
         static void PalindromeCheck(string string1, string rw)
         {
             //This method receives two parameters (the word entered, and the word in reverse) and has the job of comparing them, and displaying an appropriate message, stating if the word is a palindrome or not. (if statement???)
-            if (string1==rw)
+            if (string1 == rw)
             {
                 Console.WriteLine($"The word '{ string1 }' is a palindrome. '{ string1 }' in reverse is '{ rw }'.");
             }
