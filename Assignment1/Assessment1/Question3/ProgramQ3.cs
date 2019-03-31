@@ -17,89 +17,83 @@ namespace Question3
         public static void Main(string[] args)
         {
             Console.WriteLine("*** Question3: Queue Implementation ***\n\n");
-            Console.WriteLine("*** Adding items to the queue ***\n\n");
-
-
-            //string answer = "";
-            //do
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("*** Question3: Queue Implementation ***\n\n");
-            //    Console.WriteLine("Choose from the options below: ");
-            ////    Console.WriteLine("1 - Enqueue\n2 - Dequeue\n3 - Exit");
-            ////    answer = Console.ReadLine();
-            ////    if (answer == "1")
-            ////        MyQueue<ArrayList>.Enqueue();
-            ////    else if (answer == "2")
-            ////        MyQueue<ArrayList>.Dequeue();
-            ////    else if (answer != "1" || answer != "2")
-            ////        Console.WriteLine("Invalid entry, please try again.");
-            ////} while (answer != "1" || answer != "2");  //NOT WORKING PROPERLY - TO FIX
-
+            Console.WriteLine("*** Adding items to the queue ***");
+            ObtainInfo();
+            MyQueue<ArrayList>.DisplayCurrentQueue();
+            Console.Write("\n\nPress any key to continue: ");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("*** Question3: Queue Implementation ***\n\n");
+            Console.WriteLine("*** Removing items from the queue ***\n");
+            MyQueue<ArrayList>.DisplayCurrentQueue();
+            DequeueMessage();
+            Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
-    }
 
-    public static class MyQueue<ArrayList> //SHOULD THIS BE string OR SOMETHING ELSE???
-    {
-        public static void Enqueue()
+        public static string ObtainInfo()
         {
-            //Console.Clear();
-            //Console.WriteLine("*** Adding items to the queue ***\n\n");
-
+            string input = "";
             string answer = "y";
             do
             {
                 Console.WriteLine("Add an item to the queue.");
-                string input = Console.ReadLine();
-                ProgramQ3.words.Add(input);
+                input = Console.ReadLine();
+                MyQueue<ArrayList>.Enqueue(input);
                 Console.Write("Add another word to the queue (y/n)?");
                 answer = Console.ReadLine();
-            } while (answer != "n"); //THIS LOOP NOT WORKING QUITE RIGHT - NEEDS AN IF STATEMENT???
+            } while (answer != "n");
+            return input;
+        }
 
-            Console.Clear();
-            Console.WriteLine("*** Adding items to the queue ***\n\n");
-            Console.WriteLine("Queue items");
+        public static void DequeueMessage()
+        {
+            string answer = "";
+            do
+            {
+                Console.Write("\nPress the 'd' key to dequeue the item at the front of the queue: ");
+                string input = Console.ReadLine();
+                ProgramQ3.wordsCopyDequeue.RemoveAt(0);
+
+                MyQueue<ArrayList>.DisplayCurrentDeQueuedQueue();
+
+                Console.Write("\nWould you like to dequeue another item (y/n)? ");
+                answer = Console.ReadLine();
+
+            } while (answer == "y");
+        }
+    }
+
+
+    public static class MyQueue<ArrayList>
+    {
+        public static void Enqueue(string input)
+        {
+            ProgramQ3.words.Add(input);
+        }
+
+        public static void DeQueue()
+        {
+            ProgramQ3.wordsCopyDequeue.RemoveAt(0);
+        }
+
+        public static void DisplayCurrentQueue()
+        {
+            Console.WriteLine("\nCurrent Queue items");
             foreach (string item in ProgramQ3.words)
             {
                 Console.WriteLine(item);
             }
-
-            Console.Write("\n\nPress any key to continue");
-            Console.ReadLine();
         }
 
-        public static void Dequeue()
+        public static void DisplayCurrentDeQueuedQueue()
         {
-            Console.Clear();
-            Console.WriteLine("*** Removing items from the queue ***\n\n");
-
-            Console.WriteLine("Current items in the queue: {0}",ProgramQ3.wordsCopyDequeue.Count);
+            Console.WriteLine("Current items in the queue: {0}", ProgramQ3.wordsCopyDequeue.Count);
 
             foreach (string item in ProgramQ3.wordsCopyDequeue)
             {
                 Console.WriteLine(item);
             }
-
-            string answer = "";
-            do
-            {
-                Console.Write("\nPress the 'd' key to dequeue the next item.");
-                string input = Console.ReadLine();
-                ProgramQ3.wordsCopyDequeue.RemoveAt(0);
-
-                Console.WriteLine("\nCurrent items in the queue: {0}", ProgramQ3.wordsCopyDequeue.Count);
-                foreach (string item in ProgramQ3.wordsCopyDequeue)
-                {
-                    Console.WriteLine(item);
-                }
-                Console.Write("\nWould you like to dequeue another item (y/n)? ");
-                answer = Console.ReadLine();
-
-            } while (answer == "y");
-
-            Console.Write("Press any key to exit.");
-            Console.ReadLine();
         }
     }
 }

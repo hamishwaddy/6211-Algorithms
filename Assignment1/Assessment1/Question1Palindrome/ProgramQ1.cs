@@ -55,7 +55,7 @@ namespace Question1Palindrome
             return reversedWord;
         }
 
-        static void PalindromeCheck(string input, ReverseWord()) //How do I pass the ReverseWord method to this method?
+        public static void PalindromeCheck(string input, ReverseWord()) //How do I pass the ReverseWord method to this method?
         {
             //This method receives two parameters (the word entered, and the word in reverse) and has the job of comparing them, and displaying an appropriate message, stating if the word is a palindrome or not.
 
