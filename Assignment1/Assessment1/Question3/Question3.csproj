@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D922053-2C25-465B-AAC8-4884DAAC99CD}</ProjectGuid>
+    <ProjectGuid>{7FEFDEE3-B643-458D-B970-26756221C047}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assessment1</RootNamespace>
-    <AssemblyName>Assessment1</AssemblyName>
+    <RootNamespace>Question3</RootNamespace>
+    <AssemblyName>Question3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,29 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ProgramQ3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Question1Palindrome\Question1Palindrome.csproj">
-      <Project>{d8e8d76b-0afb-4455-a47a-b8c68a0c5867}</Project>
-      <Name>Question1Palindrome</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Question2\Question2.csproj">
-      <Project>{9823962c-24a9-4fd5-bd27-c4d799f01b6e}</Project>
-      <Name>Question2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Question3\Question3.csproj">
-      <Project>{7fefdee3-b643-458d-b970-26756221c047}</Project>
-      <Name>Question3</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Question4\Question4.csproj">
-      <Project>{654ba01a-8b9f-4955-afb4-105455e7ddac}</Project>
-      <Name>Question4</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
