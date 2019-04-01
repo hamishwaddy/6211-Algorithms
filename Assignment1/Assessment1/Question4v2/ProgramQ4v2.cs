@@ -10,52 +10,60 @@ using System.Threading;
 
 namespace Question4
 {
-    public static class ProgramQ4
+    public static class ProgramQ4v2
     {
         public static void Main(string[] args)
         {
             Console.WriteLine("*** Question4: Bank Queue ***\n\n");
             Menu();
+            SelectCustomers(input);
 
-            
             Console.ReadLine();
 
         }
 
         public static void Menu()
         {
-            string[] people = {"Trady Joe", "Dr Windy Pops", "Grandpa Bob", "Billy the kid", "Chris on crutches" };
+            //string[] people = { "Trady Joe", "Dr Windy Pops", "Grandpa Bob", "Billy the kid", "Chris on crutches" };
             Console.WriteLine("Choose three customers to add to the queue:");
             Console.WriteLine("\n1 - Tradesman Joe\n2 - Dr Windy Pops\n3 - Grandpa Bob\n4 - Billy the kid\n5 - Chris on crutches");
             string input = Console.ReadLine();
+        }
 
+        public static void SelectCustomers(string input)
+        {
             int qSize = 3;
             for (int i = 0; i < qSize; i++)
             {
                 if (input == "1")
                 {
-                    MyQueue<ArrayList>.Enqueue(people[0]);
+                    Customer customer = new Customer("Tradesman Joe", 5);
+                    MyQueue<ArrayList>.Enqueue(customer.Name);
                     Messages.DisplayQueue();
-
-                    //WaitTime(1);
-                    //MyQueue<ArrayList>.DeQueue();
                 }
                 else if (input == "2")
                 {
-                    MyQueue<ArrayList>.Enqueue(people[1]);
+                    Customer customer = new Customer("Dr Windy Pops", 2);
+                    MyQueue<ArrayList>.Enqueue(customer.Name);
                     Messages.DisplayQueue();
                 }
                 else if (input == "3")
                 {
-                    MyQueue<ArrayList>.Enqueue(people[2]);
+                    Customer customer = new Customer("Grandpa Bob", 8);
+                    MyQueue<ArrayList>.Enqueue(customer.Name);
+                    Messages.DisplayQueue();
                 }
                 else if (input == "4")
                 {
-                    MyQueue<ArrayList>.Enqueue(people[3]);
+                    Customer customer = new Customer("Billy the kid", 3);
+                    MyQueue<ArrayList>.Enqueue(customer.Name);
+                    Messages.DisplayQueue();
                 }
                 else if (input == "5")
                 {
-                    MyQueue<ArrayList>.Enqueue(people[4]);
+                    Customer customer = new Customer("Chris on crutches", 6);
+                    MyQueue<ArrayList>.Enqueue(customer.Name);
+                    Messages.DisplayQueue();
                 }
             }
         }
@@ -76,12 +84,27 @@ namespace Question4
     {
         public static void DisplayQueue()
         {
-            Console.WriteLine("Current items in the queue: {0}", ProgramQ3.words.Count);
+            Console.Write("Current items in the queue: ");
 
             foreach (string item in ProgramQ3.words)
             {
                 Console.WriteLine(item);
             }
+        }
+    }
+
+    public class Customer
+    {
+        //PROPERTIES
+        public string Name { get; set; }
+        public int WaitTime { get; set; }
+
+        //CONSTRUCTOR
+        public Customer(string name, int waitTime)
+        {
+
+            Name = name;
+            WaitTime = waitTime;
         }
     }
 
