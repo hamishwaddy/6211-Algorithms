@@ -19,7 +19,6 @@ namespace Question1Palindrome
             string input = Console.ReadLine().ToLower();
 
             BuildWordStack(input);
-            ReverseWord();
             PalindromeCheck(input, ReverseWord());
             Console.ReadLine();
 
@@ -55,17 +54,17 @@ namespace Question1Palindrome
             return reversedWord;
         }
 
-        public static void PalindromeCheck(string input, ReverseWord()) //How do I pass the ReverseWord method to this method?
+        public static void PalindromeCheck(string input, string reversedWord) //How do I pass the ReverseWord method to this method?
         {
             //This method receives two parameters (the word entered, and the word in reverse) and has the job of comparing them, and displaying an appropriate message, stating if the word is a palindrome or not.
 
-            if (input == ReverseWord())
+            if (input == reversedWord)
             {
-                Console.WriteLine($"The word '{ input }' is a palindrome. '{ input }' in reverse is '{ ReverseWord() }'.");
+                Console.WriteLine($"The word '{ input }' is a palindrome. '{ input }' in reverse is '{ reversedWord }'.");
             }
             else
             {
-                Console.WriteLine($"The word '{ input }' is not a palindrome.  '{ input }' in reverse is '{ ReverseWord() }'.");
+                Console.WriteLine($"The word '{ input }' is not a palindrome.  '{ input }' in reverse is '{ reversedWord }'.");
             }
         }
 

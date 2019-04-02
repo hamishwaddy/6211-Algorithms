@@ -12,11 +12,19 @@ namespace Question2
         static void Main(string[] args)
         {
             Console.WriteLine("*** Question2: Acronym Builder ***\n\n");
-            Console.WriteLine("Type a sentence to turn into an acronym.");
+            GetUserPhrase();
+            string[] words = new string[GetUserPhrase().Length];
+
+
+            Console.ReadLine();
+
+        }
+
+        static string GetUserPhrase()
+        {
+            Console.WriteLine("Type a sentence or phrase to turn into an acronym.");
             string sentence = Console.ReadLine();
-
-
-
+            return sentence;
         }
     }
 
@@ -33,6 +41,7 @@ namespace Question2
         public Acronym(string sentence) //The parameterised constructor should receive the sentences as a parameter and then populate the words array???
         {
             FullSentence = sentence;
+
         }
 
         //METHODS

@@ -15,57 +15,65 @@ namespace Question4
         public static void Main(string[] args)
         {
             Console.WriteLine("*** Question4: Bank Queue ***\n\n");
-            Menu();
-            SelectCustomers(input);
+            Console.WriteLine("Choose 3 different customers to add to the queue.\n");
+            Console.WriteLine("\n1 - Tradesman Joe\n2 - Dr Windy Pops\n3 - Grandpa Bob\n4 - Billy the kid\n5 - Chris on crutches\n");
+
+            int qSize = 3;
+            int custNum = 1;
+
+            for (int i = 0; i < qSize; i++)
+            {
+                Console.Write("Add customer {0}: ", custNum);
+                string input = Console.ReadLine();
+                SelectCustomers(input);
+                custNum++;
+            }
+            Console.WriteLine();
+            Messages.DisplayQueue();
+            Console.WriteLine("\nPress any key to process the customers.");
+            string userInput = Console.ReadLine();
 
             Console.ReadLine();
 
         }
 
-        public static void Menu()
-        {
-            //string[] people = { "Trady Joe", "Dr Windy Pops", "Grandpa Bob", "Billy the kid", "Chris on crutches" };
-            Console.WriteLine("Choose three customers to add to the queue:");
-            Console.WriteLine("\n1 - Tradesman Joe\n2 - Dr Windy Pops\n3 - Grandpa Bob\n4 - Billy the kid\n5 - Chris on crutches");
-            string input = Console.ReadLine();
-        }
-
+     
         public static void SelectCustomers(string input)
         {
-            int qSize = 3;
-            for (int i = 0; i < qSize; i++)
+            if (input == "1")
             {
-                if (input == "1")
-                {
-                    Customer customer = new Customer("Tradesman Joe", 5);
-                    MyQueue<ArrayList>.Enqueue(customer.Name);
-                    Messages.DisplayQueue();
-                }
-                else if (input == "2")
-                {
-                    Customer customer = new Customer("Dr Windy Pops", 2);
-                    MyQueue<ArrayList>.Enqueue(customer.Name);
-                    Messages.DisplayQueue();
-                }
-                else if (input == "3")
-                {
-                    Customer customer = new Customer("Grandpa Bob", 8);
-                    MyQueue<ArrayList>.Enqueue(customer.Name);
-                    Messages.DisplayQueue();
-                }
-                else if (input == "4")
-                {
-                    Customer customer = new Customer("Billy the kid", 3);
-                    MyQueue<ArrayList>.Enqueue(customer.Name);
-                    Messages.DisplayQueue();
-                }
-                else if (input == "5")
-                {
-                    Customer customer = new Customer("Chris on crutches", 6);
-                    MyQueue<ArrayList>.Enqueue(customer.Name);
-                    Messages.DisplayQueue();
-                }
+                Customer customer = new Customer("Tradesman Joe", 5);
+                MyQueue<ArrayList>.Enqueue(customer.Name);                    
             }
+            else if (input == "2")
+            {
+                Customer customer = new Customer("Dr Windy Pops", 2);
+                MyQueue<ArrayList>.Enqueue(customer.Name);
+            }
+            else if (input == "3")
+            {
+                Customer customer = new Customer("Grandpa Bob", 8);
+                MyQueue<ArrayList>.Enqueue(customer.Name);
+            }
+            else if (input == "4")
+            {
+                Customer customer = new Customer("Billy the kid", 3);
+                MyQueue<ArrayList>.Enqueue(customer.Name);
+            }
+            else if (input == "5")
+            {
+                Customer customer = new Customer("Chris on crutches", 6);
+                MyQueue<ArrayList>.Enqueue(customer.Name);
+            }
+            else
+            {
+                Console.WriteLine("Invalid entry, try again.");
+            }
+        }
+
+        public static void ProcessCustomers()
+        {
+
         }
 
         public static void WaitTime(int seconds)
@@ -84,7 +92,7 @@ namespace Question4
     {
         public static void DisplayQueue()
         {
-            Console.Write("Current items in the queue: ");
+            Console.WriteLine("Current customers in the queue: ");
 
             foreach (string item in ProgramQ3.words)
             {
@@ -102,7 +110,6 @@ namespace Question4
         //CONSTRUCTOR
         public Customer(string name, int waitTime)
         {
-
             Name = name;
             WaitTime = waitTime;
         }
