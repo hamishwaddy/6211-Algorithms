@@ -9,9 +9,8 @@ namespace Question3
 {
     public static class ProgramQ3
     {
-        public static ArrayList words = new ArrayList();
-        public static ArrayList wordsCopy = words;
-        public static ArrayList wordsCopyDequeue = words;
+        public static MyQueue<string> words = new MyQueue<string>();
+
 
 
         public static void Main(string[] args)
@@ -19,13 +18,13 @@ namespace Question3
             Console.WriteLine("*** Question3: Queue Implementation ***\n\n");
             Console.WriteLine("*** Adding items to the queue ***");
             ObtainInfo();
-            MyQueue<ArrayList>.DisplayCurrentQueue();
+            words.DisplayCurrentQueue();
             Console.Write("\n\nPress any key to continue: ");
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("*** Question3: Queue Implementation ***\n\n");
             Console.WriteLine("*** Removing items from the queue ***\n");
-            MyQueue<ArrayList>.DisplayCurrentQueue();
+            words.DisplayCurrentQueue();
             DequeueMessage();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
@@ -39,7 +38,7 @@ namespace Question3
             {
                 Console.WriteLine("Add an item to the queue.");
                 input = Console.ReadLine();
-                MyQueue<ArrayList>.Enqueue(input);
+                words.Enqueue(input);
                 Console.Write("Add another word to the queue (y/n)?");
                 answer = Console.ReadLine();
             } while (answer != "n");
@@ -53,9 +52,9 @@ namespace Question3
             {
                 Console.Write("\nPress the 'd' key to dequeue the item at the front of the queue: ");
                 string input = Console.ReadLine();
-                ProgramQ3.wordsCopyDequeue.RemoveAt(0);
+                Console.WriteLine($"Item Dequeued: {words.DeQueue()}"); 
 
-                MyQueue<ArrayList>.DisplayCurrentDeQueuedQueue();
+                words.DisplayCurrentDeQueuedQueue();
 
                 Console.Write("\nWould you like to dequeue another item (y/n)? ");
                 answer = Console.ReadLine();
@@ -65,32 +64,35 @@ namespace Question3
     }
 
 
-    public static class MyQueue<ArrayList>
+    public class MyQueue<T>
     {
-        public static void Enqueue(string input)
+        public static ArrayList queue = new ArrayList();
+        public void Enqueue(T input)
         {
-            ProgramQ3.words.Add(input);
+            queue.Add(input);
         }
 
-        public static void DeQueue()
+        public string DeQueue()
         {
-            ProgramQ3.wordsCopyDequeue.RemoveAt(0);
+            object x = queue[0];
+            queue.RemoveAt(0);
+            return x.ToString();
         }
 
-        public static void DisplayCurrentQueue()
+        public void DisplayCurrentQueue()
         {
             Console.WriteLine("\nCurrent Queue items");
-            foreach (string item in ProgramQ3.words)
+            foreach (string item in queue)
             {
                 Console.WriteLine(item);
             }
         }
 
-        public static void DisplayCurrentDeQueuedQueue()
+        public void DisplayCurrentDeQueuedQueue()
         {
-            Console.WriteLine("Current items in the queue: {0}", ProgramQ3.wordsCopyDequeue.Count);
+            Console.WriteLine("Current items in the queue: {0}",queue.Count);
 
-            foreach (string item in ProgramQ3.wordsCopyDequeue)
+            foreach (string item in queue)
             {
                 Console.WriteLine(item);
             }
