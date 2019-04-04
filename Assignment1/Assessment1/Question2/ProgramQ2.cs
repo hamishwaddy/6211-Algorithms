@@ -12,19 +12,13 @@ namespace Question2
         static void Main(string[] args)
         {
             Console.WriteLine("*** Question2: Acronym Builder ***\n\n");
-            GetUserPhrase();
-            string[] words = new string[GetUserPhrase().Length];
-
+            Console.WriteLine("Type a sentence or phrase to turn into an acronym.");
+            string sentence = Console.ReadLine();
+            string[] words = new string[] { sentence }; //HAS THIS POPULATED THE WORDS ARRAY? HOW CAN I TEST?
+            
 
             Console.ReadLine();
 
-        }
-
-        static string GetUserPhrase()
-        {
-            Console.WriteLine("Type a sentence or phrase to turn into an acronym.");
-            string sentence = Console.ReadLine();
-            return sentence;
         }
     }
 
@@ -35,19 +29,21 @@ namespace Question2
         public string[] Words { get; set; }
         public Dictionary<char, string> AcronymDictionary { get; set; }
 
-       
+
 
         //CONSTRUCTOR
         public Acronym(string sentence) //The parameterised constructor should receive the sentences as a parameter and then populate the words array???
         {
             FullSentence = sentence;
-
+            string[] words = new string[]{sentence}; //HAS THIS POPULATED THE WORDS ARRAY? HOW CAN I TEST?
+            Words = words;
         }
 
         //METHODS
         public static void BuildAcronym()
         {
-            Dictionary<char, string> dict = new Dictionary<char, string>();
+           Dictionary<char, string> dict = new Dictionary<char, string>();
+            
 
         }
 

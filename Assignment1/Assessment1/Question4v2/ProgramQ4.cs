@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,7 @@ using System.Threading;
 
 namespace Question4
 {
-    public static class ProgramQ4v2
+    public static class ProgramQ4
     {
         public static MyQueue<Customer> cust = new MyQueue<Customer>();
         public static void Main(string[] args)
@@ -20,7 +19,6 @@ namespace Question4
             Console.WriteLine("Choose 3 different customers to add to the queue.\n");
             Console.WriteLine("\n1 - Tradesman Joe\n2 - Dr Windy Pops\n3 - Grandpa Bob\n4 - Billy the kid\n5 - Chris on crutches\n");
             int qSize = 3;
-
 
             for (int i = 0; i < qSize; i++)
             {
@@ -73,21 +71,7 @@ namespace Question4
                 Console.WriteLine("Invalid entry, try again.");
             }
         }
-
     }
-
-    //public static class Messages
-    //{
-    //    public static void DisplayQueue()
-    //    {
-    //        Console.WriteLine("Current customers in the queue: ");
-
-    //        foreach (string item in ProgramQ4v2.customers)
-    //        {
-    //            Console.WriteLine(item);
-    //        }
-    //    }
-    //}
 
     public class Customer
     {
@@ -101,8 +85,6 @@ namespace Question4
             Name = name;
             WaitTime = waitTime;
         }
-
-        
 
         public void Process(Customer x)
         {

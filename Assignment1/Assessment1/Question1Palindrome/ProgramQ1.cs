@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace Question1Palindrome
+namespace Question1
 {
     public class ProgramQ1
     {
@@ -24,9 +24,9 @@ namespace Question1Palindrome
 
         }
 
+        //This method receives the word entered by the user as a parameter and has the job of pushing the characters of that word onto a stack.
         public static void BuildWordStack(string input)
         {
-            //This method receives the word entered by the user as a parameter and has the job of pushing the characters of that word onto a stack.
 
             char[] chArr = input.ToCharArray();
 
@@ -40,9 +40,9 @@ namespace Question1Palindrome
             }
         }
 
+        //This method receives no parameters but has the job of returning a string; the word (the characters from the stack) in reverse.
         public static string ReverseWord()
         {
-            //This method receives no parameters but has the job of returning a string; the word (the characters from the stack) in reverse.
             Stack<char> userWordStackCopy = userWordStack;
 
             string reversedWord = "";
@@ -54,9 +54,9 @@ namespace Question1Palindrome
             return reversedWord;
         }
 
+        //This method receives two parameters (the word entered, and the word in reverse) and has the job of comparing them, and displaying an appropriate message, stating if the word is a palindrome or not.
         public static void PalindromeCheck(string input, string reversedWord) //How do I pass the ReverseWord method to this method?
         {
-            //This method receives two parameters (the word entered, and the word in reverse) and has the job of comparing them, and displaying an appropriate message, stating if the word is a palindrome or not.
 
             if (input == reversedWord)
             {
